@@ -3,13 +3,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Ultimate Duidoku</title>
+		<link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Vollkorn+SC&display=swap" rel="stylesheet"> 
 		<style>
 			p {
-				 font: "Comic sans MS";
+				font-family: 'Vollkorn SC', cursive;
+				font-size: 20px;
+			}
+			
+			h1 {
+				font-family: 'Vollkorn SC', cursive;
+				font-size: 50px;
 			}
 
-			h1 {
-				 font: "Comic sans MS";
+			h2 {
+				font-family: 'Vollkorn SC', cursive;
+				font-size: 35px;			
+			}
+
+			button {
+				font-family: 'UnifrakturMaguntia', cursive;
 			}
 
 			div {
@@ -66,6 +79,23 @@
 				width: 100%;
 				top: 0%;
 				background-color: white;
+			}
+
+			#restart {
+				background-color: white;
+				color: black;
+				padding: 10px 10px;
+				text-align: center;
+				box-shadow: 2px 2px;
+				margin: 3px 1px;
+				display: inline-block;
+				font-size: 30px;
+				width: 300px;
+				height: 60px;
+				max-width: 300px;
+				max-height: 60px;
+				font-family: 'Vollkorn SC', cursive;
+				font-size: 30px;
 			}
 		</style>
 		<script>
@@ -288,14 +318,15 @@
 			}
 		</script>
 	</head>
-	<body>	
-		<br><br><br><br>
+	<body>
+		<br><br><br><br><br><br><br>
 		<div>
-		<h3>Rules</h3>
+		<h2>Rules</h2>
 		<p>1. Squares are valid as in Sudoku<br>2. Moves alternate from Player 1 to Player 2<br>3. If your move causes an unsolvable board, you lose<br>4. If the board is solved, it is a tie</p> 
 		</div>
 		<br>
 		<hr>
+		<br>
 		<br>
 		<div>
 		<button class="button" id="0,0" onclick="disp(0,0)">&nbsp;</button>
@@ -423,6 +454,7 @@
 		<br>
 		</div>
 		<br>
+		<div><button id="restart" onclick="window.location.reload()">Restart</button></div>
 		<button class="popup" id="1" onclick="process(1)">1</button>
 		<button class="popup" id="2" onclick="process(2)">2</button>
 		<button class="popup" id="3" onclick="process(3)">3</button>
@@ -433,17 +465,15 @@
 		<button class="popup" id="8" onclick="process(8)">8</button>
 		<button class="popup" id="9" onclick="process(9)">9</button>
 		<br>
-		<br>
 		<hr>
 		<div>
 		<p>Additional Information:</p>
-		<p>Kaushik Basu's <a href="http://kaushikbasu.org/">website</a><p>
-		<p>You can reach the author at luis[dot]hoderlein[at]gmail[dot]com</p>
-		<p>Have a swell day!</p>
+		<p>Concept: <a href="http://kaushikbasu.org/">Kaushik Basu</a><p>
+		<p>&nbsp;Author: Luis Hoderlein</p>
 		</div>
-
+		<br>
 		<div id="top-bar">
-		<h1>ULTIMATE DUIDOKU</h1>
+		<h1>Ultimate Duidoku</h1>
 		<hr>
 		</div>	
 	</body>
