@@ -1,9 +1,913 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
-		<title>My Website</title>
 		<meta charset="UTF-8">
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Luis Hoderlein</title>
+
+		<style>
+			body {
+				align-content: center;
+				background-color:  #404040;
+			}
+
+			div {
+				box-shadow: 6px 6px;
+			}
+
+			a {
+				text-decoration: none;
+				text-align: left;
+			}
+
+			#cover {
+				position: absolute;
+				top: 150px;
+				left: 50%;
+				width: 140px;
+				height: 140px;
+				margin-left: -68px;
+				margin-top: -68px;
+				border-radius: 70px;
+				background-color:  #404040;
+				box-shadow: none;
+			}
+
+			#box {
+				width: 300px;
+				height: 470px;
+				background-color: lightgray;
+				position: absolute;
+				top: 300px;
+				left: 50%;
+    				margin-left: -160px;
+				padding: 0px 20px;
+				border-radius: 10px;
+				align-content: left;
+				text-align: left;
+				box-shadow: 6px 6px;
+			}
+
+			#footer {
+				font-size: 10px;
+				position: absolute;
+				text-align: bottom;
+				margin-top: 20px;
+			}
+
+
+			@keyframes star {
+				0.0% {margin-left: 0.00px;margin-top: 100.00px}
+				0.2777777777777778% {margin-left: 1.75px;margin-top: 99.98px}
+				0.5555555555555556% {margin-left: 3.49px;margin-top: 99.94px}
+				0.8333333333333333% {margin-left: 5.23px;margin-top: 99.86px}
+				1.1111111111111112% {margin-left: 6.98px;margin-top: 99.76px}
+				1.3888888888888888% {margin-left: 8.72px;margin-top: 99.62px}
+				1.6666666666666665% {margin-left: 10.45px;margin-top: 99.45px}
+				1.9444444444444444% {margin-left: 12.19px;margin-top: 99.25px}
+				2.2222222222222223% {margin-left: 13.92px;margin-top: 99.03px}
+				2.5% {margin-left: 15.64px;margin-top: 98.77px}
+				2.7777777777777777% {margin-left: 17.36px;margin-top: 98.48px}
+				3.0555555555555554% {margin-left: 19.08px;margin-top: 98.16px}
+				3.333333333333333% {margin-left: 20.79px;margin-top: 97.81px}
+				3.611111111111111% {margin-left: 22.50px;margin-top: 97.44px}
+				3.888888888888889% {margin-left: 24.19px;margin-top: 97.03px}
+				4.166666666666667% {margin-left: 25.88px;margin-top: 96.59px}
+				4.444444444444445% {margin-left: 27.56px;margin-top: 96.13px}
+				4.722222222222222% {margin-left: 29.24px;margin-top: 95.63px}
+				5.0% {margin-left: 30.90px;margin-top: 95.11px}
+				5.277777777777778% {margin-left: 32.56px;margin-top: 94.55px}
+				5.555555555555555% {margin-left: 34.20px;margin-top: 93.97px}
+				5.833333333333333% {margin-left: 35.84px;margin-top: 93.36px}
+				6.111111111111111% {margin-left: 37.46px;margin-top: 92.72px}
+				6.388888888888888% {margin-left: 39.07px;margin-top: 92.05px}
+				6.666666666666666% {margin-left: 40.67px;margin-top: 91.35px}
+				6.944444444444445% {margin-left: 42.26px;margin-top: 90.63px}
+				7.222222222222222% {margin-left: 43.84px;margin-top: 89.88px}
+				7.5% {margin-left: 45.40px;margin-top: 89.10px}
+				7.777777777777778% {margin-left: 46.95px;margin-top: 88.29px}
+				8.055555555555555% {margin-left: 48.48px;margin-top: 87.46px}
+				8.333333333333334% {margin-left: 50.00px;margin-top: 86.60px}
+				8.61111111111111% {margin-left: 51.50px;margin-top: 85.72px}
+				8.88888888888889% {margin-left: 52.99px;margin-top: 84.80px}
+				9.166666666666666% {margin-left: 54.46px;margin-top: 83.87px}
+				9.444444444444445% {margin-left: 55.92px;margin-top: 82.90px}
+				9.722222222222221% {margin-left: 57.36px;margin-top: 81.92px}
+				10.0% {margin-left: 58.78px;margin-top: 80.90px}
+				10.277777777777777% {margin-left: 60.18px;margin-top: 79.86px}
+				10.555555555555555% {margin-left: 61.57px;margin-top: 78.80px}
+				10.833333333333334% {margin-left: 62.93px;margin-top: 77.71px}
+				11.11111111111111% {margin-left: 64.28px;margin-top: 76.60px}
+				11.38888888888889% {margin-left: 65.61px;margin-top: 75.47px}
+				11.666666666666666% {margin-left: 66.91px;margin-top: 74.31px}
+				11.944444444444445% {margin-left: 68.20px;margin-top: 73.14px}
+				12.222222222222221% {margin-left: 69.47px;margin-top: 71.93px}
+				12.5% {margin-left: 70.71px;margin-top: 70.71px}
+				12.777777777777777% {margin-left: 71.93px;margin-top: 69.47px}
+				13.055555555555555% {margin-left: 73.14px;margin-top: 68.20px}
+				13.333333333333332% {margin-left: 74.31px;margin-top: 66.91px}
+				13.61111111111111% {margin-left: 75.47px;margin-top: 65.61px}
+				13.88888888888889% {margin-left: 76.60px;margin-top: 64.28px}
+				14.166666666666666% {margin-left: 77.71px;margin-top: 62.93px}
+				14.444444444444445% {margin-left: 78.80px;margin-top: 61.57px}
+				14.722222222222221% {margin-left: 79.86px;margin-top: 60.18px}
+				15.0% {margin-left: 80.90px;margin-top: 58.78px}
+				15.277777777777777% {margin-left: 81.92px;margin-top: 57.36px}
+				15.555555555555555% {margin-left: 82.90px;margin-top: 55.92px}
+				15.833333333333332% {margin-left: 83.87px;margin-top: 54.46px}
+				16.11111111111111% {margin-left: 84.80px;margin-top: 52.99px}
+				16.38888888888889% {margin-left: 85.72px;margin-top: 51.50px}
+				16.666666666666668% {margin-left: 86.60px;margin-top: 50.00px}
+				16.944444444444443% {margin-left: 87.46px;margin-top: 48.48px}
+				17.22222222222222% {margin-left: 88.29px;margin-top: 46.95px}
+				17.5% {margin-left: 89.10px;margin-top: 45.40px}
+				17.77777777777778% {margin-left: 89.88px;margin-top: 43.84px}
+				18.055555555555554% {margin-left: 90.63px;margin-top: 42.26px}
+				18.333333333333332% {margin-left: 91.35px;margin-top: 40.67px}
+				18.61111111111111% {margin-left: 92.05px;margin-top: 39.07px}
+				18.88888888888889% {margin-left: 92.72px;margin-top: 37.46px}
+				19.166666666666668% {margin-left: 93.36px;margin-top: 35.84px}
+				19.444444444444443% {margin-left: 93.97px;margin-top: 34.20px}
+				19.72222222222222% {margin-left: 94.55px;margin-top: 32.56px}
+				20.0% {margin-left: 95.11px;margin-top: 30.90px}
+				20.27777777777778% {margin-left: 95.63px;margin-top: 29.24px}
+				20.555555555555554% {margin-left: 96.13px;margin-top: 27.56px}
+				20.833333333333332% {margin-left: 96.59px;margin-top: 25.88px}
+				21.11111111111111% {margin-left: 97.03px;margin-top: 24.19px}
+				21.38888888888889% {margin-left: 97.44px;margin-top: 22.50px}
+				21.666666666666668% {margin-left: 97.81px;margin-top: 20.79px}
+				21.944444444444443% {margin-left: 98.16px;margin-top: 19.08px}
+				22.22222222222222% {margin-left: 98.48px;margin-top: 17.36px}
+				22.5% {margin-left: 98.77px;margin-top: 15.64px}
+				22.77777777777778% {margin-left: 99.03px;margin-top: 13.92px}
+				23.055555555555554% {margin-left: 99.25px;margin-top: 12.19px}
+				23.333333333333332% {margin-left: 99.45px;margin-top: 10.45px}
+				23.61111111111111% {margin-left: 99.62px;margin-top: 8.72px}
+				23.88888888888889% {margin-left: 99.76px;margin-top: 6.98px}
+				24.166666666666664% {margin-left: 99.86px;margin-top: 5.23px}
+				24.444444444444443% {margin-left: 99.94px;margin-top: 3.49px}
+				24.72222222222222% {margin-left: 99.98px;margin-top: 1.75px}
+				25.0% {margin-left: 100.00px;margin-top: 0.00px}
+				25.27777777777778% {margin-left: 99.98px;margin-top: -1.75px}
+				25.555555555555554% {margin-left: 99.94px;margin-top: -3.49px}
+				25.833333333333332% {margin-left: 99.86px;margin-top: -5.23px}
+				26.11111111111111% {margin-left: 99.76px;margin-top: -6.98px}
+				26.38888888888889% {margin-left: 99.62px;margin-top: -8.72px}
+				26.666666666666664% {margin-left: 99.45px;margin-top: -10.45px}
+				26.944444444444443% {margin-left: 99.25px;margin-top: -12.19px}
+				27.22222222222222% {margin-left: 99.03px;margin-top: -13.92px}
+				27.5% {margin-left: 98.77px;margin-top: -15.64px}
+				27.77777777777778% {margin-left: 98.48px;margin-top: -17.36px}
+				28.055555555555554% {margin-left: 98.16px;margin-top: -19.08px}
+				28.333333333333332% {margin-left: 97.81px;margin-top: -20.79px}
+				28.61111111111111% {margin-left: 97.44px;margin-top: -22.50px}
+				28.88888888888889% {margin-left: 97.03px;margin-top: -24.19px}
+				29.166666666666664% {margin-left: 96.59px;margin-top: -25.88px}
+				29.444444444444443% {margin-left: 96.13px;margin-top: -27.56px}
+				29.72222222222222% {margin-left: 95.63px;margin-top: -29.24px}
+				30.0% {margin-left: 95.11px;margin-top: -30.90px}
+				30.27777777777778% {margin-left: 94.55px;margin-top: -32.56px}
+				30.555555555555554% {margin-left: 93.97px;margin-top: -34.20px}
+				30.833333333333332% {margin-left: 93.36px;margin-top: -35.84px}
+				31.11111111111111% {margin-left: 92.72px;margin-top: -37.46px}
+				31.38888888888889% {margin-left: 92.05px;margin-top: -39.07px}
+				31.666666666666664% {margin-left: 91.35px;margin-top: -40.67px}
+				31.944444444444443% {margin-left: 90.63px;margin-top: -42.26px}
+				32.22222222222222% {margin-left: 89.88px;margin-top: -43.84px}
+				32.5% {margin-left: 89.10px;margin-top: -45.40px}
+				32.77777777777778% {margin-left: 88.29px;margin-top: -46.95px}
+				33.05555555555556% {margin-left: 87.46px;margin-top: -48.48px}
+				33.333333333333336% {margin-left: 86.60px;margin-top: -50.00px}
+				33.61111111111111% {margin-left: 85.72px;margin-top: -51.50px}
+				33.888888888888886% {margin-left: 84.80px;margin-top: -52.99px}
+				34.166666666666664% {margin-left: 83.87px;margin-top: -54.46px}
+				34.44444444444444% {margin-left: 82.90px;margin-top: -55.92px}
+				34.72222222222222% {margin-left: 81.92px;margin-top: -57.36px}
+				35.0% {margin-left: 80.90px;margin-top: -58.78px}
+				35.27777777777778% {margin-left: 79.86px;margin-top: -60.18px}
+				35.55555555555556% {margin-left: 78.80px;margin-top: -61.57px}
+				35.833333333333336% {margin-left: 77.71px;margin-top: -62.93px}
+				36.11111111111111% {margin-left: 76.60px;margin-top: -64.28px}
+				36.388888888888886% {margin-left: 75.47px;margin-top: -65.61px}
+				36.666666666666664% {margin-left: 74.31px;margin-top: -66.91px}
+				36.94444444444444% {margin-left: 73.14px;margin-top: -68.20px}
+				37.22222222222222% {margin-left: 71.93px;margin-top: -69.47px}
+				37.5% {margin-left: 70.71px;margin-top: -70.71px}
+				37.77777777777778% {margin-left: 69.47px;margin-top: -71.93px}
+				38.05555555555556% {margin-left: 68.20px;margin-top: -73.14px}
+				38.333333333333336% {margin-left: 66.91px;margin-top: -74.31px}
+				38.61111111111111% {margin-left: 65.61px;margin-top: -75.47px}
+				38.888888888888886% {margin-left: 64.28px;margin-top: -76.60px}
+				39.166666666666664% {margin-left: 62.93px;margin-top: -77.71px}
+				39.44444444444444% {margin-left: 61.57px;margin-top: -78.80px}
+				39.72222222222222% {margin-left: 60.18px;margin-top: -79.86px}
+				40.0% {margin-left: 58.78px;margin-top: -80.90px}
+				40.27777777777778% {margin-left: 57.36px;margin-top: -81.92px}
+				40.55555555555556% {margin-left: 55.92px;margin-top: -82.90px}
+				40.833333333333336% {margin-left: 54.46px;margin-top: -83.87px}
+				41.11111111111111% {margin-left: 52.99px;margin-top: -84.80px}
+				41.388888888888886% {margin-left: 51.50px;margin-top: -85.72px}
+				41.666666666666664% {margin-left: 50.00px;margin-top: -86.60px}
+				41.94444444444444% {margin-left: 48.48px;margin-top: -87.46px}
+				42.22222222222222% {margin-left: 46.95px;margin-top: -88.29px}
+				42.5% {margin-left: 45.40px;margin-top: -89.10px}
+				42.77777777777778% {margin-left: 43.84px;margin-top: -89.88px}
+				43.05555555555556% {margin-left: 42.26px;margin-top: -90.63px}
+				43.333333333333336% {margin-left: 40.67px;margin-top: -91.35px}
+				43.61111111111111% {margin-left: 39.07px;margin-top: -92.05px}
+				43.888888888888886% {margin-left: 37.46px;margin-top: -92.72px}
+				44.166666666666664% {margin-left: 35.84px;margin-top: -93.36px}
+				44.44444444444444% {margin-left: 34.20px;margin-top: -93.97px}
+				44.72222222222222% {margin-left: 32.56px;margin-top: -94.55px}
+				45.0% {margin-left: 30.90px;margin-top: -95.11px}
+				45.27777777777778% {margin-left: 29.24px;margin-top: -95.63px}
+				45.55555555555556% {margin-left: 27.56px;margin-top: -96.13px}
+				45.833333333333336% {margin-left: 25.88px;margin-top: -96.59px}
+				46.11111111111111% {margin-left: 24.19px;margin-top: -97.03px}
+				46.388888888888886% {margin-left: 22.50px;margin-top: -97.44px}
+				46.666666666666664% {margin-left: 20.79px;margin-top: -97.81px}
+				46.94444444444444% {margin-left: 19.08px;margin-top: -98.16px}
+				47.22222222222222% {margin-left: 17.36px;margin-top: -98.48px}
+				47.5% {margin-left: 15.64px;margin-top: -98.77px}
+				47.77777777777778% {margin-left: 13.92px;margin-top: -99.03px}
+				48.05555555555556% {margin-left: 12.19px;margin-top: -99.25px}
+				48.33333333333333% {margin-left: 10.45px;margin-top: -99.45px}
+				48.61111111111111% {margin-left: 8.72px;margin-top: -99.62px}
+				48.888888888888886% {margin-left: 6.98px;margin-top: -99.76px}
+				49.166666666666664% {margin-left: 5.23px;margin-top: -99.86px}
+				49.44444444444444% {margin-left: 3.49px;margin-top: -99.94px}
+				49.72222222222222% {margin-left: 1.75px;margin-top: -99.98px}
+				50.0% {margin-left: 0.00px;margin-top: -100.00px}
+				50.27777777777778% {margin-left: -1.75px;margin-top: -99.98px}
+				50.55555555555556% {margin-left: -3.49px;margin-top: -99.94px}
+				50.83333333333333% {margin-left: -5.23px;margin-top: -99.86px}
+				51.11111111111111% {margin-left: -6.98px;margin-top: -99.76px}
+				51.388888888888886% {margin-left: -8.72px;margin-top: -99.62px}
+				51.666666666666664% {margin-left: -10.45px;margin-top: -99.45px}
+				51.94444444444444% {margin-left: -12.19px;margin-top: -99.25px}
+				52.22222222222222% {margin-left: -13.92px;margin-top: -99.03px}
+				52.5% {margin-left: -15.64px;margin-top: -98.77px}
+				52.77777777777778% {margin-left: -17.36px;margin-top: -98.48px}
+				53.05555555555556% {margin-left: -19.08px;margin-top: -98.16px}
+				53.33333333333333% {margin-left: -20.79px;margin-top: -97.81px}
+				53.61111111111111% {margin-left: -22.50px;margin-top: -97.44px}
+				53.888888888888886% {margin-left: -24.19px;margin-top: -97.03px}
+				54.166666666666664% {margin-left: -25.88px;margin-top: -96.59px}
+				54.44444444444444% {margin-left: -27.56px;margin-top: -96.13px}
+				54.72222222222222% {margin-left: -29.24px;margin-top: -95.63px}
+				55.0% {margin-left: -30.90px;margin-top: -95.11px}
+				55.27777777777778% {margin-left: -32.56px;margin-top: -94.55px}
+				55.55555555555556% {margin-left: -34.20px;margin-top: -93.97px}
+				55.83333333333333% {margin-left: -35.84px;margin-top: -93.36px}
+				56.11111111111111% {margin-left: -37.46px;margin-top: -92.72px}
+				56.388888888888886% {margin-left: -39.07px;margin-top: -92.05px}
+				56.666666666666664% {margin-left: -40.67px;margin-top: -91.35px}
+				56.94444444444444% {margin-left: -42.26px;margin-top: -90.63px}
+				57.22222222222222% {margin-left: -43.84px;margin-top: -89.88px}
+				57.5% {margin-left: -45.40px;margin-top: -89.10px}
+				57.77777777777778% {margin-left: -46.95px;margin-top: -88.29px}
+				58.05555555555556% {margin-left: -48.48px;margin-top: -87.46px}
+				58.33333333333333% {margin-left: -50.00px;margin-top: -86.60px}
+				58.61111111111111% {margin-left: -51.50px;margin-top: -85.72px}
+				58.888888888888886% {margin-left: -52.99px;margin-top: -84.80px}
+				59.166666666666664% {margin-left: -54.46px;margin-top: -83.87px}
+				59.44444444444444% {margin-left: -55.92px;margin-top: -82.90px}
+				59.72222222222222% {margin-left: -57.36px;margin-top: -81.92px}
+				60.0% {margin-left: -58.78px;margin-top: -80.90px}
+				60.27777777777778% {margin-left: -60.18px;margin-top: -79.86px}
+				60.55555555555556% {margin-left: -61.57px;margin-top: -78.80px}
+				60.83333333333333% {margin-left: -62.93px;margin-top: -77.71px}
+				61.11111111111111% {margin-left: -64.28px;margin-top: -76.60px}
+				61.388888888888886% {margin-left: -65.61px;margin-top: -75.47px}
+				61.666666666666664% {margin-left: -66.91px;margin-top: -74.31px}
+				61.94444444444444% {margin-left: -68.20px;margin-top: -73.14px}
+				62.22222222222222% {margin-left: -69.47px;margin-top: -71.93px}
+				62.5% {margin-left: -70.71px;margin-top: -70.71px}
+				62.77777777777778% {margin-left: -71.93px;margin-top: -69.47px}
+				63.05555555555556% {margin-left: -73.14px;margin-top: -68.20px}
+				63.33333333333333% {margin-left: -74.31px;margin-top: -66.91px}
+				63.61111111111111% {margin-left: -75.47px;margin-top: -65.61px}
+				63.888888888888886% {margin-left: -76.60px;margin-top: -64.28px}
+				64.16666666666667% {margin-left: -77.71px;margin-top: -62.93px}
+				64.44444444444444% {margin-left: -78.80px;margin-top: -61.57px}
+				64.72222222222221% {margin-left: -79.86px;margin-top: -60.18px}
+				65.0% {margin-left: -80.90px;margin-top: -58.78px}
+				65.27777777777777% {margin-left: -81.92px;margin-top: -57.36px}
+				65.55555555555556% {margin-left: -82.90px;margin-top: -55.92px}
+				65.83333333333333% {margin-left: -83.87px;margin-top: -54.46px}
+				66.11111111111111% {margin-left: -84.80px;margin-top: -52.99px}
+				66.38888888888889% {margin-left: -85.72px;margin-top: -51.50px}
+				66.66666666666667% {margin-left: -86.60px;margin-top: -50.00px}
+				66.94444444444444% {margin-left: -87.46px;margin-top: -48.48px}
+				67.22222222222221% {margin-left: -88.29px;margin-top: -46.95px}
+				67.5% {margin-left: -89.10px;margin-top: -45.40px}
+				67.77777777777777% {margin-left: -89.88px;margin-top: -43.84px}
+				68.05555555555556% {margin-left: -90.63px;margin-top: -42.26px}
+				68.33333333333333% {margin-left: -91.35px;margin-top: -40.67px}
+				68.61111111111111% {margin-left: -92.05px;margin-top: -39.07px}
+				68.88888888888889% {margin-left: -92.72px;margin-top: -37.46px}
+				69.16666666666667% {margin-left: -93.36px;margin-top: -35.84px}
+				69.44444444444444% {margin-left: -93.97px;margin-top: -34.20px}
+				69.72222222222221% {margin-left: -94.55px;margin-top: -32.56px}
+				70.0% {margin-left: -95.11px;margin-top: -30.90px}
+				70.27777777777777% {margin-left: -95.63px;margin-top: -29.24px}
+				70.55555555555556% {margin-left: -96.13px;margin-top: -27.56px}
+				70.83333333333333% {margin-left: -96.59px;margin-top: -25.88px}
+				71.11111111111111% {margin-left: -97.03px;margin-top: -24.19px}
+				71.38888888888889% {margin-left: -97.44px;margin-top: -22.50px}
+				71.66666666666667% {margin-left: -97.81px;margin-top: -20.79px}
+				71.94444444444444% {margin-left: -98.16px;margin-top: -19.08px}
+				72.22222222222221% {margin-left: -98.48px;margin-top: -17.36px}
+				72.5% {margin-left: -98.77px;margin-top: -15.64px}
+				72.77777777777777% {margin-left: -99.03px;margin-top: -13.92px}
+				73.05555555555556% {margin-left: -99.25px;margin-top: -12.19px}
+				73.33333333333333% {margin-left: -99.45px;margin-top: -10.45px}
+				73.61111111111111% {margin-left: -99.62px;margin-top: -8.72px}
+				73.88888888888889% {margin-left: -99.76px;margin-top: -6.98px}
+				74.16666666666667% {margin-left: -99.86px;margin-top: -5.23px}
+				74.44444444444444% {margin-left: -99.94px;margin-top: -3.49px}
+				74.72222222222221% {margin-left: -99.98px;margin-top: -1.75px}
+				75.0% {margin-left: -100.00px;margin-top: -0.00px}
+				75.27777777777777% {margin-left: -99.98px;margin-top: 1.75px}
+				75.55555555555556% {margin-left: -99.94px;margin-top: 3.49px}
+				75.83333333333333% {margin-left: -99.86px;margin-top: 5.23px}
+				76.11111111111111% {margin-left: -99.76px;margin-top: 6.98px}
+				76.38888888888889% {margin-left: -99.62px;margin-top: 8.72px}
+				76.66666666666667% {margin-left: -99.45px;margin-top: 10.45px}
+				76.94444444444444% {margin-left: -99.25px;margin-top: 12.19px}
+				77.22222222222221% {margin-left: -99.03px;margin-top: 13.92px}
+				77.5% {margin-left: -98.77px;margin-top: 15.64px}
+				77.77777777777777% {margin-left: -98.48px;margin-top: 17.36px}
+				78.05555555555556% {margin-left: -98.16px;margin-top: 19.08px}
+				78.33333333333333% {margin-left: -97.81px;margin-top: 20.79px}
+				78.61111111111111% {margin-left: -97.44px;margin-top: 22.50px}
+				78.88888888888889% {margin-left: -97.03px;margin-top: 24.19px}
+				79.16666666666667% {margin-left: -96.59px;margin-top: 25.88px}
+				79.44444444444444% {margin-left: -96.13px;margin-top: 27.56px}
+				79.72222222222221% {margin-left: -95.63px;margin-top: 29.24px}
+				80.0% {margin-left: -95.11px;margin-top: 30.90px}
+				80.27777777777777% {margin-left: -94.55px;margin-top: 32.56px}
+				80.55555555555556% {margin-left: -93.97px;margin-top: 34.20px}
+				80.83333333333333% {margin-left: -93.36px;margin-top: 35.84px}
+				81.11111111111111% {margin-left: -92.72px;margin-top: 37.46px}
+				81.38888888888889% {margin-left: -92.05px;margin-top: 39.07px}
+				81.66666666666667% {margin-left: -91.35px;margin-top: 40.67px}
+				81.94444444444444% {margin-left: -90.63px;margin-top: 42.26px}
+				82.22222222222221% {margin-left: -89.88px;margin-top: 43.84px}
+				82.5% {margin-left: -89.10px;margin-top: 45.40px}
+				82.77777777777777% {margin-left: -88.29px;margin-top: 46.95px}
+				83.05555555555556% {margin-left: -87.46px;margin-top: 48.48px}
+				83.33333333333333% {margin-left: -86.60px;margin-top: 50.00px}
+				83.61111111111111% {margin-left: -85.72px;margin-top: 51.50px}
+				83.88888888888889% {margin-left: -84.80px;margin-top: 52.99px}
+				84.16666666666667% {margin-left: -83.87px;margin-top: 54.46px}
+				84.44444444444444% {margin-left: -82.90px;margin-top: 55.92px}
+				84.72222222222221% {margin-left: -81.92px;margin-top: 57.36px}
+				85.0% {margin-left: -80.90px;margin-top: 58.78px}
+				85.27777777777777% {margin-left: -79.86px;margin-top: 60.18px}
+				85.55555555555556% {margin-left: -78.80px;margin-top: 61.57px}
+				85.83333333333333% {margin-left: -77.71px;margin-top: 62.93px}
+				86.11111111111111% {margin-left: -76.60px;margin-top: 64.28px}
+				86.38888888888889% {margin-left: -75.47px;margin-top: 65.61px}
+				86.66666666666667% {margin-left: -74.31px;margin-top: 66.91px}
+				86.94444444444444% {margin-left: -73.14px;margin-top: 68.20px}
+				87.22222222222221% {margin-left: -71.93px;margin-top: 69.47px}
+				87.5% {margin-left: -70.71px;margin-top: 70.71px}
+				87.77777777777777% {margin-left: -69.47px;margin-top: 71.93px}
+				88.05555555555556% {margin-left: -68.20px;margin-top: 73.14px}
+				88.33333333333333% {margin-left: -66.91px;margin-top: 74.31px}
+				88.61111111111111% {margin-left: -65.61px;margin-top: 75.47px}
+				88.88888888888889% {margin-left: -64.28px;margin-top: 76.60px}
+				89.16666666666667% {margin-left: -62.93px;margin-top: 77.71px}
+				89.44444444444444% {margin-left: -61.57px;margin-top: 78.80px}
+				89.72222222222221% {margin-left: -60.18px;margin-top: 79.86px}
+				90.0% {margin-left: -58.78px;margin-top: 80.90px}
+				90.27777777777777% {margin-left: -57.36px;margin-top: 81.92px}
+				90.55555555555556% {margin-left: -55.92px;margin-top: 82.90px}
+				90.83333333333333% {margin-left: -54.46px;margin-top: 83.87px}
+				91.11111111111111% {margin-left: -52.99px;margin-top: 84.80px}
+				91.38888888888889% {margin-left: -51.50px;margin-top: 85.72px}
+				91.66666666666667% {margin-left: -50.00px;margin-top: 86.60px}
+				91.94444444444444% {margin-left: -48.48px;margin-top: 87.46px}
+				92.22222222222221% {margin-left: -46.95px;margin-top: 88.29px}
+				92.5% {margin-left: -45.40px;margin-top: 89.10px}
+				92.77777777777777% {margin-left: -43.84px;margin-top: 89.88px}
+				93.05555555555556% {margin-left: -42.26px;margin-top: 90.63px}
+				93.33333333333333% {margin-left: -40.67px;margin-top: 91.35px}
+				93.61111111111111% {margin-left: -39.07px;margin-top: 92.05px}
+				93.88888888888889% {margin-left: -37.46px;margin-top: 92.72px}
+				94.16666666666667% {margin-left: -35.84px;margin-top: 93.36px}
+				94.44444444444444% {margin-left: -34.20px;margin-top: 93.97px}
+				94.72222222222221% {margin-left: -32.56px;margin-top: 94.55px}
+				95.0% {margin-left: -30.90px;margin-top: 95.11px}
+				95.27777777777777% {margin-left: -29.24px;margin-top: 95.63px}
+				95.55555555555556% {margin-left: -27.56px;margin-top: 96.13px}
+				95.83333333333333% {margin-left: -25.88px;margin-top: 96.59px}
+				96.11111111111111% {margin-left: -24.19px;margin-top: 97.03px}
+				96.38888888888889% {margin-left: -22.50px;margin-top: 97.44px}
+				96.66666666666666% {margin-left: -20.79px;margin-top: 97.81px}
+				96.94444444444444% {margin-left: -19.08px;margin-top: 98.16px}
+				97.22222222222221% {margin-left: -17.36px;margin-top: 98.48px}
+				97.5% {margin-left: -15.64px;margin-top: 98.77px}
+				97.77777777777777% {margin-left: -13.92px;margin-top: 99.03px}
+				98.05555555555556% {margin-left: -12.19px;margin-top: 99.25px}
+				98.33333333333333% {margin-left: -10.45px;margin-top: 99.45px}
+				98.61111111111111% {margin-left: -8.72px;margin-top: 99.62px}
+				98.88888888888889% {margin-left: -6.98px;margin-top: 99.76px}
+				99.16666666666666% {margin-left: -5.23px;margin-top: 99.86px}
+				99.44444444444444% {margin-left: -3.49px;margin-top: 99.94px}
+				99.72222222222221% {margin-left: -1.75px;margin-top: 99.98px}
+
+			}
+
+			@keyframes star-other {
+				0.0% {margin-left: -0.00px;margin-top: 80.00px}
+				0.2777777777777778% {margin-left: -1.40px;margin-top: 79.99px}
+				0.5555555555555556% {margin-left: -2.79px;margin-top: 79.95px}
+				0.8333333333333333% {margin-left: -4.19px;margin-top: 79.89px}
+				1.1111111111111112% {margin-left: -5.58px;margin-top: 79.81px}
+				1.3888888888888888% {margin-left: -6.97px;margin-top: 79.70px}
+				1.6666666666666665% {margin-left: -8.36px;margin-top: 79.56px}
+				1.9444444444444444% {margin-left: -9.75px;margin-top: 79.40px}
+				2.2222222222222223% {margin-left: -11.13px;margin-top: 79.22px}
+				2.5% {margin-left: -12.51px;margin-top: 79.02px}
+				2.7777777777777777% {margin-left: -13.89px;margin-top: 78.78px}
+				3.0555555555555554% {margin-left: -15.26px;margin-top: 78.53px}
+				3.333333333333333% {margin-left: -16.63px;margin-top: 78.25px}
+				3.611111111111111% {margin-left: -18.00px;margin-top: 77.95px}
+				3.888888888888889% {margin-left: -19.35px;margin-top: 77.62px}
+				4.166666666666667% {margin-left: -20.71px;margin-top: 77.27px}
+				4.444444444444445% {margin-left: -22.05px;margin-top: 76.90px}
+				4.722222222222222% {margin-left: -23.39px;margin-top: 76.50px}
+				5.0% {margin-left: -24.72px;margin-top: 76.08px}
+				5.277777777777778% {margin-left: -26.05px;margin-top: 75.64px}
+				5.555555555555555% {margin-left: -27.36px;margin-top: 75.18px}
+				5.833333333333333% {margin-left: -28.67px;margin-top: 74.69px}
+				6.111111111111111% {margin-left: -29.97px;margin-top: 74.17px}
+				6.388888888888888% {margin-left: -31.26px;margin-top: 73.64px}
+				6.666666666666666% {margin-left: -32.54px;margin-top: 73.08px}
+				6.944444444444445% {margin-left: -33.81px;margin-top: 72.50px}
+				7.222222222222222% {margin-left: -35.07px;margin-top: 71.90px}
+				7.5% {margin-left: -36.32px;margin-top: 71.28px}
+				7.777777777777778% {margin-left: -37.56px;margin-top: 70.64px}
+				8.055555555555555% {margin-left: -38.78px;margin-top: 69.97px}
+				8.333333333333334% {margin-left: -40.00px;margin-top: 69.28px}
+				8.61111111111111% {margin-left: -41.20px;margin-top: 68.57px}
+				8.88888888888889% {margin-left: -42.39px;margin-top: 67.84px}
+				9.166666666666666% {margin-left: -43.57px;margin-top: 67.09px}
+				9.444444444444445% {margin-left: -44.74px;margin-top: 66.32px}
+				9.722222222222221% {margin-left: -45.89px;margin-top: 65.53px}
+				10.0% {margin-left: -47.02px;margin-top: 64.72px}
+				10.277777777777777% {margin-left: -48.15px;margin-top: 63.89px}
+				10.555555555555555% {margin-left: -49.25px;margin-top: 63.04px}
+				10.833333333333334% {margin-left: -50.35px;margin-top: 62.17px}
+				11.11111111111111% {margin-left: -51.42px;margin-top: 61.28px}
+				11.38888888888889% {margin-left: -52.48px;margin-top: 60.38px}
+				11.666666666666666% {margin-left: -53.53px;margin-top: 59.45px}
+				11.944444444444445% {margin-left: -54.56px;margin-top: 58.51px}
+				12.222222222222221% {margin-left: -55.57px;margin-top: 57.55px}
+				12.5% {margin-left: -56.57px;margin-top: 56.57px}
+				12.777777777777777% {margin-left: -57.55px;margin-top: 55.57px}
+				13.055555555555555% {margin-left: -58.51px;margin-top: 54.56px}
+				13.333333333333332% {margin-left: -59.45px;margin-top: 53.53px}
+				13.61111111111111% {margin-left: -60.38px;margin-top: 52.48px}
+				13.88888888888889% {margin-left: -61.28px;margin-top: 51.42px}
+				14.166666666666666% {margin-left: -62.17px;margin-top: 50.35px}
+				14.444444444444445% {margin-left: -63.04px;margin-top: 49.25px}
+				14.722222222222221% {margin-left: -63.89px;margin-top: 48.15px}
+				15.0% {margin-left: -64.72px;margin-top: 47.02px}
+				15.277777777777777% {margin-left: -65.53px;margin-top: 45.89px}
+				15.555555555555555% {margin-left: -66.32px;margin-top: 44.74px}
+				15.833333333333332% {margin-left: -67.09px;margin-top: 43.57px}
+				16.11111111111111% {margin-left: -67.84px;margin-top: 42.39px}
+				16.38888888888889% {margin-left: -68.57px;margin-top: 41.20px}
+				16.666666666666668% {margin-left: -69.28px;margin-top: 40.00px}
+				16.944444444444443% {margin-left: -69.97px;margin-top: 38.78px}
+				17.22222222222222% {margin-left: -70.64px;margin-top: 37.56px}
+				17.5% {margin-left: -71.28px;margin-top: 36.32px}
+				17.77777777777778% {margin-left: -71.90px;margin-top: 35.07px}
+				18.055555555555554% {margin-left: -72.50px;margin-top: 33.81px}
+				18.333333333333332% {margin-left: -73.08px;margin-top: 32.54px}
+				18.61111111111111% {margin-left: -73.64px;margin-top: 31.26px}
+				18.88888888888889% {margin-left: -74.17px;margin-top: 29.97px}
+				19.166666666666668% {margin-left: -74.69px;margin-top: 28.67px}
+				19.444444444444443% {margin-left: -75.18px;margin-top: 27.36px}
+				19.72222222222222% {margin-left: -75.64px;margin-top: 26.05px}
+				20.0% {margin-left: -76.08px;margin-top: 24.72px}
+				20.27777777777778% {margin-left: -76.50px;margin-top: 23.39px}
+				20.555555555555554% {margin-left: -76.90px;margin-top: 22.05px}
+				20.833333333333332% {margin-left: -77.27px;margin-top: 20.71px}
+				21.11111111111111% {margin-left: -77.62px;margin-top: 19.35px}
+				21.38888888888889% {margin-left: -77.95px;margin-top: 18.00px}
+				21.666666666666668% {margin-left: -78.25px;margin-top: 16.63px}
+				21.944444444444443% {margin-left: -78.53px;margin-top: 15.26px}
+				22.22222222222222% {margin-left: -78.78px;margin-top: 13.89px}
+				22.5% {margin-left: -79.02px;margin-top: 12.51px}
+				22.77777777777778% {margin-left: -79.22px;margin-top: 11.13px}
+				23.055555555555554% {margin-left: -79.40px;margin-top: 9.75px}
+				23.333333333333332% {margin-left: -79.56px;margin-top: 8.36px}
+				23.61111111111111% {margin-left: -79.70px;margin-top: 6.97px}
+				23.88888888888889% {margin-left: -79.81px;margin-top: 5.58px}
+				24.166666666666664% {margin-left: -79.89px;margin-top: 4.19px}
+				24.444444444444443% {margin-left: -79.95px;margin-top: 2.79px}
+				24.72222222222222% {margin-left: -79.99px;margin-top: 1.40px}
+				25.0% {margin-left: -80.00px;margin-top: 0.00px}
+				25.27777777777778% {margin-left: -79.99px;margin-top: -1.40px}
+				25.555555555555554% {margin-left: -79.95px;margin-top: -2.79px}
+				25.833333333333332% {margin-left: -79.89px;margin-top: -4.19px}
+				26.11111111111111% {margin-left: -79.81px;margin-top: -5.58px}
+				26.38888888888889% {margin-left: -79.70px;margin-top: -6.97px}
+				26.666666666666664% {margin-left: -79.56px;margin-top: -8.36px}
+				26.944444444444443% {margin-left: -79.40px;margin-top: -9.75px}
+				27.22222222222222% {margin-left: -79.22px;margin-top: -11.13px}
+				27.5% {margin-left: -79.02px;margin-top: -12.51px}
+				27.77777777777778% {margin-left: -78.78px;margin-top: -13.89px}
+				28.055555555555554% {margin-left: -78.53px;margin-top: -15.26px}
+				28.333333333333332% {margin-left: -78.25px;margin-top: -16.63px}
+				28.61111111111111% {margin-left: -77.95px;margin-top: -18.00px}
+				28.88888888888889% {margin-left: -77.62px;margin-top: -19.35px}
+				29.166666666666664% {margin-left: -77.27px;margin-top: -20.71px}
+				29.444444444444443% {margin-left: -76.90px;margin-top: -22.05px}
+				29.72222222222222% {margin-left: -76.50px;margin-top: -23.39px}
+				30.0% {margin-left: -76.08px;margin-top: -24.72px}
+				30.27777777777778% {margin-left: -75.64px;margin-top: -26.05px}
+				30.555555555555554% {margin-left: -75.18px;margin-top: -27.36px}
+				30.833333333333332% {margin-left: -74.69px;margin-top: -28.67px}
+				31.11111111111111% {margin-left: -74.17px;margin-top: -29.97px}
+				31.38888888888889% {margin-left: -73.64px;margin-top: -31.26px}
+				31.666666666666664% {margin-left: -73.08px;margin-top: -32.54px}
+				31.944444444444443% {margin-left: -72.50px;margin-top: -33.81px}
+				32.22222222222222% {margin-left: -71.90px;margin-top: -35.07px}
+				32.5% {margin-left: -71.28px;margin-top: -36.32px}
+				32.77777777777778% {margin-left: -70.64px;margin-top: -37.56px}
+				33.05555555555556% {margin-left: -69.97px;margin-top: -38.78px}
+				33.333333333333336% {margin-left: -69.28px;margin-top: -40.00px}
+				33.61111111111111% {margin-left: -68.57px;margin-top: -41.20px}
+				33.888888888888886% {margin-left: -67.84px;margin-top: -42.39px}
+				34.166666666666664% {margin-left: -67.09px;margin-top: -43.57px}
+				34.44444444444444% {margin-left: -66.32px;margin-top: -44.74px}
+				34.72222222222222% {margin-left: -65.53px;margin-top: -45.89px}
+				35.0% {margin-left: -64.72px;margin-top: -47.02px}
+				35.27777777777778% {margin-left: -63.89px;margin-top: -48.15px}
+				35.55555555555556% {margin-left: -63.04px;margin-top: -49.25px}
+				35.833333333333336% {margin-left: -62.17px;margin-top: -50.35px}
+				36.11111111111111% {margin-left: -61.28px;margin-top: -51.42px}
+				36.388888888888886% {margin-left: -60.38px;margin-top: -52.48px}
+				36.666666666666664% {margin-left: -59.45px;margin-top: -53.53px}
+				36.94444444444444% {margin-left: -58.51px;margin-top: -54.56px}
+				37.22222222222222% {margin-left: -57.55px;margin-top: -55.57px}
+				37.5% {margin-left: -56.57px;margin-top: -56.57px}
+				37.77777777777778% {margin-left: -55.57px;margin-top: -57.55px}
+				38.05555555555556% {margin-left: -54.56px;margin-top: -58.51px}
+				38.333333333333336% {margin-left: -53.53px;margin-top: -59.45px}
+				38.61111111111111% {margin-left: -52.48px;margin-top: -60.38px}
+				38.888888888888886% {margin-left: -51.42px;margin-top: -61.28px}
+				39.166666666666664% {margin-left: -50.35px;margin-top: -62.17px}
+				39.44444444444444% {margin-left: -49.25px;margin-top: -63.04px}
+				39.72222222222222% {margin-left: -48.15px;margin-top: -63.89px}
+				40.0% {margin-left: -47.02px;margin-top: -64.72px}
+				40.27777777777778% {margin-left: -45.89px;margin-top: -65.53px}
+				40.55555555555556% {margin-left: -44.74px;margin-top: -66.32px}
+				40.833333333333336% {margin-left: -43.57px;margin-top: -67.09px}
+				41.11111111111111% {margin-left: -42.39px;margin-top: -67.84px}
+				41.388888888888886% {margin-left: -41.20px;margin-top: -68.57px}
+				41.666666666666664% {margin-left: -40.00px;margin-top: -69.28px}
+				41.94444444444444% {margin-left: -38.78px;margin-top: -69.97px}
+				42.22222222222222% {margin-left: -37.56px;margin-top: -70.64px}
+				42.5% {margin-left: -36.32px;margin-top: -71.28px}
+				42.77777777777778% {margin-left: -35.07px;margin-top: -71.90px}
+				43.05555555555556% {margin-left: -33.81px;margin-top: -72.50px}
+				43.333333333333336% {margin-left: -32.54px;margin-top: -73.08px}
+				43.61111111111111% {margin-left: -31.26px;margin-top: -73.64px}
+				43.888888888888886% {margin-left: -29.97px;margin-top: -74.17px}
+				44.166666666666664% {margin-left: -28.67px;margin-top: -74.69px}
+				44.44444444444444% {margin-left: -27.36px;margin-top: -75.18px}
+				44.72222222222222% {margin-left: -26.05px;margin-top: -75.64px}
+				45.0% {margin-left: -24.72px;margin-top: -76.08px}
+				45.27777777777778% {margin-left: -23.39px;margin-top: -76.50px}
+				45.55555555555556% {margin-left: -22.05px;margin-top: -76.90px}
+				45.833333333333336% {margin-left: -20.71px;margin-top: -77.27px}
+				46.11111111111111% {margin-left: -19.35px;margin-top: -77.62px}
+				46.388888888888886% {margin-left: -18.00px;margin-top: -77.95px}
+				46.666666666666664% {margin-left: -16.63px;margin-top: -78.25px}
+				46.94444444444444% {margin-left: -15.26px;margin-top: -78.53px}
+				47.22222222222222% {margin-left: -13.89px;margin-top: -78.78px}
+				47.5% {margin-left: -12.51px;margin-top: -79.02px}
+				47.77777777777778% {margin-left: -11.13px;margin-top: -79.22px}
+				48.05555555555556% {margin-left: -9.75px;margin-top: -79.40px}
+				48.33333333333333% {margin-left: -8.36px;margin-top: -79.56px}
+				48.61111111111111% {margin-left: -6.97px;margin-top: -79.70px}
+				48.888888888888886% {margin-left: -5.58px;margin-top: -79.81px}
+				49.166666666666664% {margin-left: -4.19px;margin-top: -79.89px}
+				49.44444444444444% {margin-left: -2.79px;margin-top: -79.95px}
+				49.72222222222222% {margin-left: -1.40px;margin-top: -79.99px}
+				50.0% {margin-left: -0.00px;margin-top: -80.00px}
+				50.27777777777778% {margin-left: 1.40px;margin-top: -79.99px}
+				50.55555555555556% {margin-left: 2.79px;margin-top: -79.95px}
+				50.83333333333333% {margin-left: 4.19px;margin-top: -79.89px}
+				51.11111111111111% {margin-left: 5.58px;margin-top: -79.81px}
+				51.388888888888886% {margin-left: 6.97px;margin-top: -79.70px}
+				51.666666666666664% {margin-left: 8.36px;margin-top: -79.56px}
+				51.94444444444444% {margin-left: 9.75px;margin-top: -79.40px}
+				52.22222222222222% {margin-left: 11.13px;margin-top: -79.22px}
+				52.5% {margin-left: 12.51px;margin-top: -79.02px}
+				52.77777777777778% {margin-left: 13.89px;margin-top: -78.78px}
+				53.05555555555556% {margin-left: 15.26px;margin-top: -78.53px}
+				53.33333333333333% {margin-left: 16.63px;margin-top: -78.25px}
+				53.61111111111111% {margin-left: 18.00px;margin-top: -77.95px}
+				53.888888888888886% {margin-left: 19.35px;margin-top: -77.62px}
+				54.166666666666664% {margin-left: 20.71px;margin-top: -77.27px}
+				54.44444444444444% {margin-left: 22.05px;margin-top: -76.90px}
+				54.72222222222222% {margin-left: 23.39px;margin-top: -76.50px}
+				55.0% {margin-left: 24.72px;margin-top: -76.08px}
+				55.27777777777778% {margin-left: 26.05px;margin-top: -75.64px}
+				55.55555555555556% {margin-left: 27.36px;margin-top: -75.18px}
+				55.83333333333333% {margin-left: 28.67px;margin-top: -74.69px}
+				56.11111111111111% {margin-left: 29.97px;margin-top: -74.17px}
+				56.388888888888886% {margin-left: 31.26px;margin-top: -73.64px}
+				56.666666666666664% {margin-left: 32.54px;margin-top: -73.08px}
+				56.94444444444444% {margin-left: 33.81px;margin-top: -72.50px}
+				57.22222222222222% {margin-left: 35.07px;margin-top: -71.90px}
+				57.5% {margin-left: 36.32px;margin-top: -71.28px}
+				57.77777777777778% {margin-left: 37.56px;margin-top: -70.64px}
+				58.05555555555556% {margin-left: 38.78px;margin-top: -69.97px}
+				58.33333333333333% {margin-left: 40.00px;margin-top: -69.28px}
+				58.61111111111111% {margin-left: 41.20px;margin-top: -68.57px}
+				58.888888888888886% {margin-left: 42.39px;margin-top: -67.84px}
+				59.166666666666664% {margin-left: 43.57px;margin-top: -67.09px}
+				59.44444444444444% {margin-left: 44.74px;margin-top: -66.32px}
+				59.72222222222222% {margin-left: 45.89px;margin-top: -65.53px}
+				60.0% {margin-left: 47.02px;margin-top: -64.72px}
+				60.27777777777778% {margin-left: 48.15px;margin-top: -63.89px}
+				60.55555555555556% {margin-left: 49.25px;margin-top: -63.04px}
+				60.83333333333333% {margin-left: 50.35px;margin-top: -62.17px}
+				61.11111111111111% {margin-left: 51.42px;margin-top: -61.28px}
+				61.388888888888886% {margin-left: 52.48px;margin-top: -60.38px}
+				61.666666666666664% {margin-left: 53.53px;margin-top: -59.45px}
+				61.94444444444444% {margin-left: 54.56px;margin-top: -58.51px}
+				62.22222222222222% {margin-left: 55.57px;margin-top: -57.55px}
+				62.5% {margin-left: 56.57px;margin-top: -56.57px}
+				62.77777777777778% {margin-left: 57.55px;margin-top: -55.57px}
+				63.05555555555556% {margin-left: 58.51px;margin-top: -54.56px}
+				63.33333333333333% {margin-left: 59.45px;margin-top: -53.53px}
+				63.61111111111111% {margin-left: 60.38px;margin-top: -52.48px}
+				63.888888888888886% {margin-left: 61.28px;margin-top: -51.42px}
+				64.16666666666667% {margin-left: 62.17px;margin-top: -50.35px}
+				64.44444444444444% {margin-left: 63.04px;margin-top: -49.25px}
+				64.72222222222221% {margin-left: 63.89px;margin-top: -48.15px}
+				65.0% {margin-left: 64.72px;margin-top: -47.02px}
+				65.27777777777777% {margin-left: 65.53px;margin-top: -45.89px}
+				65.55555555555556% {margin-left: 66.32px;margin-top: -44.74px}
+				65.83333333333333% {margin-left: 67.09px;margin-top: -43.57px}
+				66.11111111111111% {margin-left: 67.84px;margin-top: -42.39px}
+				66.38888888888889% {margin-left: 68.57px;margin-top: -41.20px}
+				66.66666666666667% {margin-left: 69.28px;margin-top: -40.00px}
+				66.94444444444444% {margin-left: 69.97px;margin-top: -38.78px}
+				67.22222222222221% {margin-left: 70.64px;margin-top: -37.56px}
+				67.5% {margin-left: 71.28px;margin-top: -36.32px}
+				67.77777777777777% {margin-left: 71.90px;margin-top: -35.07px}
+				68.05555555555556% {margin-left: 72.50px;margin-top: -33.81px}
+				68.33333333333333% {margin-left: 73.08px;margin-top: -32.54px}
+				68.61111111111111% {margin-left: 73.64px;margin-top: -31.26px}
+				68.88888888888889% {margin-left: 74.17px;margin-top: -29.97px}
+				69.16666666666667% {margin-left: 74.69px;margin-top: -28.67px}
+				69.44444444444444% {margin-left: 75.18px;margin-top: -27.36px}
+				69.72222222222221% {margin-left: 75.64px;margin-top: -26.05px}
+				70.0% {margin-left: 76.08px;margin-top: -24.72px}
+				70.27777777777777% {margin-left: 76.50px;margin-top: -23.39px}
+				70.55555555555556% {margin-left: 76.90px;margin-top: -22.05px}
+				70.83333333333333% {margin-left: 77.27px;margin-top: -20.71px}
+				71.11111111111111% {margin-left: 77.62px;margin-top: -19.35px}
+				71.38888888888889% {margin-left: 77.95px;margin-top: -18.00px}
+				71.66666666666667% {margin-left: 78.25px;margin-top: -16.63px}
+				71.94444444444444% {margin-left: 78.53px;margin-top: -15.26px}
+				72.22222222222221% {margin-left: 78.78px;margin-top: -13.89px}
+				72.5% {margin-left: 79.02px;margin-top: -12.51px}
+				72.77777777777777% {margin-left: 79.22px;margin-top: -11.13px}
+				73.05555555555556% {margin-left: 79.40px;margin-top: -9.75px}
+				73.33333333333333% {margin-left: 79.56px;margin-top: -8.36px}
+				73.61111111111111% {margin-left: 79.70px;margin-top: -6.97px}
+				73.88888888888889% {margin-left: 79.81px;margin-top: -5.58px}
+				74.16666666666667% {margin-left: 79.89px;margin-top: -4.19px}
+				74.44444444444444% {margin-left: 79.95px;margin-top: -2.79px}
+				74.72222222222221% {margin-left: 79.99px;margin-top: -1.40px}
+				75.0% {margin-left: 80.00px;margin-top: -0.00px}
+				75.27777777777777% {margin-left: 79.99px;margin-top: 1.40px}
+				75.55555555555556% {margin-left: 79.95px;margin-top: 2.79px}
+				75.83333333333333% {margin-left: 79.89px;margin-top: 4.19px}
+				76.11111111111111% {margin-left: 79.81px;margin-top: 5.58px}
+				76.38888888888889% {margin-left: 79.70px;margin-top: 6.97px}
+				76.66666666666667% {margin-left: 79.56px;margin-top: 8.36px}
+				76.94444444444444% {margin-left: 79.40px;margin-top: 9.75px}
+				77.22222222222221% {margin-left: 79.22px;margin-top: 11.13px}
+				77.5% {margin-left: 79.02px;margin-top: 12.51px}
+				77.77777777777777% {margin-left: 78.78px;margin-top: 13.89px}
+				78.05555555555556% {margin-left: 78.53px;margin-top: 15.26px}
+				78.33333333333333% {margin-left: 78.25px;margin-top: 16.63px}
+				78.61111111111111% {margin-left: 77.95px;margin-top: 18.00px}
+				78.88888888888889% {margin-left: 77.62px;margin-top: 19.35px}
+				79.16666666666667% {margin-left: 77.27px;margin-top: 20.71px}
+				79.44444444444444% {margin-left: 76.90px;margin-top: 22.05px}
+				79.72222222222221% {margin-left: 76.50px;margin-top: 23.39px}
+				80.0% {margin-left: 76.08px;margin-top: 24.72px}
+				80.27777777777777% {margin-left: 75.64px;margin-top: 26.05px}
+				80.55555555555556% {margin-left: 75.18px;margin-top: 27.36px}
+				80.83333333333333% {margin-left: 74.69px;margin-top: 28.67px}
+				81.11111111111111% {margin-left: 74.17px;margin-top: 29.97px}
+				81.38888888888889% {margin-left: 73.64px;margin-top: 31.26px}
+				81.66666666666667% {margin-left: 73.08px;margin-top: 32.54px}
+				81.94444444444444% {margin-left: 72.50px;margin-top: 33.81px}
+				82.22222222222221% {margin-left: 71.90px;margin-top: 35.07px}
+				82.5% {margin-left: 71.28px;margin-top: 36.32px}
+				82.77777777777777% {margin-left: 70.64px;margin-top: 37.56px}
+				83.05555555555556% {margin-left: 69.97px;margin-top: 38.78px}
+				83.33333333333333% {margin-left: 69.28px;margin-top: 40.00px}
+				83.61111111111111% {margin-left: 68.57px;margin-top: 41.20px}
+				83.88888888888889% {margin-left: 67.84px;margin-top: 42.39px}
+				84.16666666666667% {margin-left: 67.09px;margin-top: 43.57px}
+				84.44444444444444% {margin-left: 66.32px;margin-top: 44.74px}
+				84.72222222222221% {margin-left: 65.53px;margin-top: 45.89px}
+				85.0% {margin-left: 64.72px;margin-top: 47.02px}
+				85.27777777777777% {margin-left: 63.89px;margin-top: 48.15px}
+				85.55555555555556% {margin-left: 63.04px;margin-top: 49.25px}
+				85.83333333333333% {margin-left: 62.17px;margin-top: 50.35px}
+				86.11111111111111% {margin-left: 61.28px;margin-top: 51.42px}
+				86.38888888888889% {margin-left: 60.38px;margin-top: 52.48px}
+				86.66666666666667% {margin-left: 59.45px;margin-top: 53.53px}
+				86.94444444444444% {margin-left: 58.51px;margin-top: 54.56px}
+				87.22222222222221% {margin-left: 57.55px;margin-top: 55.57px}
+				87.5% {margin-left: 56.57px;margin-top: 56.57px}
+				87.77777777777777% {margin-left: 55.57px;margin-top: 57.55px}
+				88.05555555555556% {margin-left: 54.56px;margin-top: 58.51px}
+				88.33333333333333% {margin-left: 53.53px;margin-top: 59.45px}
+				88.61111111111111% {margin-left: 52.48px;margin-top: 60.38px}
+				88.88888888888889% {margin-left: 51.42px;margin-top: 61.28px}
+				89.16666666666667% {margin-left: 50.35px;margin-top: 62.17px}
+				89.44444444444444% {margin-left: 49.25px;margin-top: 63.04px}
+				89.72222222222221% {margin-left: 48.15px;margin-top: 63.89px}
+				90.0% {margin-left: 47.02px;margin-top: 64.72px}
+				90.27777777777777% {margin-left: 45.89px;margin-top: 65.53px}
+				90.55555555555556% {margin-left: 44.74px;margin-top: 66.32px}
+				90.83333333333333% {margin-left: 43.57px;margin-top: 67.09px}
+				91.11111111111111% {margin-left: 42.39px;margin-top: 67.84px}
+				91.38888888888889% {margin-left: 41.20px;margin-top: 68.57px}
+				91.66666666666667% {margin-left: 40.00px;margin-top: 69.28px}
+				91.94444444444444% {margin-left: 38.78px;margin-top: 69.97px}
+				92.22222222222221% {margin-left: 37.56px;margin-top: 70.64px}
+				92.5% {margin-left: 36.32px;margin-top: 71.28px}
+				92.77777777777777% {margin-left: 35.07px;margin-top: 71.90px}
+				93.05555555555556% {margin-left: 33.81px;margin-top: 72.50px}
+				93.33333333333333% {margin-left: 32.54px;margin-top: 73.08px}
+				93.61111111111111% {margin-left: 31.26px;margin-top: 73.64px}
+				93.88888888888889% {margin-left: 29.97px;margin-top: 74.17px}
+				94.16666666666667% {margin-left: 28.67px;margin-top: 74.69px}
+				94.44444444444444% {margin-left: 27.36px;margin-top: 75.18px}
+				94.72222222222221% {margin-left: 26.05px;margin-top: 75.64px}
+				95.0% {margin-left: 24.72px;margin-top: 76.08px}
+				95.27777777777777% {margin-left: 23.39px;margin-top: 76.50px}
+				95.55555555555556% {margin-left: 22.05px;margin-top: 76.90px}
+				95.83333333333333% {margin-left: 20.71px;margin-top: 77.27px}
+				96.11111111111111% {margin-left: 19.35px;margin-top: 77.62px}
+				96.38888888888889% {margin-left: 18.00px;margin-top: 77.95px}
+				96.66666666666666% {margin-left: 16.63px;margin-top: 78.25px}
+				96.94444444444444% {margin-left: 15.26px;margin-top: 78.53px}
+				97.22222222222221% {margin-left: 13.89px;margin-top: 78.78px}
+				97.5% {margin-left: 12.51px;margin-top: 79.02px}
+				97.77777777777777% {margin-left: 11.13px;margin-top: 79.22px}
+				98.05555555555556% {margin-left: 9.75px;margin-top: 79.40px}
+				98.33333333333333% {margin-left: 8.36px;margin-top: 79.56px}
+				98.61111111111111% {margin-left: 6.97px;margin-top: 79.70px}
+				98.88888888888889% {margin-left: 5.58px;margin-top: 79.81px}
+				99.16666666666666% {margin-left: 4.19px;margin-top: 79.89px}
+				99.44444444444444% {margin-left: 2.79px;margin-top: 79.95px}
+				99.72222222222221% {margin-left: 1.40px;margin-top: 79.99px}
+
+			}
+
+			#star1 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.84s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star2 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.68s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star3 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.52s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star4 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.36s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star5 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.2s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star6 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.04s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star7 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.88s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star8 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.7199999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star9 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.56s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star10 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.4s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star11 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.24s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star12 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.08s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star13 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.92s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star14 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.7599999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star15 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.6s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star16 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.44s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star17 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.2799999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star18 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.12s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star19 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.96s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star20 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.7999999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star21 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.6400000000000001s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star22 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.48s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star23 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.31999999999999984s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star24 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.16000000000000014s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star25 {position: absolute; animation-name: star; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: 0.0s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+
+			#star26 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -4.0s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star27 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.84s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star28 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.68s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star29 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.52s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star30 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.36s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star31 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.2s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star32 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -3.04s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star33 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.88s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star34 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.7199999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star35 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.56s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star36 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.4s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star37 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.24s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star38 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -2.08s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star39 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.92s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star40 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.7599999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star41 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.6s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star42 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.44s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star43 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.2799999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star44 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -1.12s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star45 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.96s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star46 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.7999999999999998s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star47 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.6400000000000001s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star48 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.48s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star49 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.31999999999999984s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+			#star50 {position: absolute; animation-name: star-other; animation-duration: 4s; animation-iteration-count: infinite; animation-delay: -0.16000000000000014s; width: 4px; height: 4px; border-radius: 2px; background-color: white; top: 150px; left: 50%;}
+		</style>
 	</head>
+	<body>
+		<div id="box">
+			<h2>Welcome</h2>
+
+			<p>...to the page of Luis Hoderlein!</p>
+
+			<p>I am student at Cornell University, with an interest in economics, data science and computer science.</p> <p>But mainly, I love in solving problems using models & data!</p>
+
+			<p>You can find my resume <a href="https://hoderle.in/hoderlein-resume.pdf">here</a></p>
+
+			<h4>Some of my past creations:</h4>
+			<ul>
+				<li><a href="https://khemritolya.github.io/ultimate-duidoku/">Ultimate Duidoku</a></li>
+				<li><a href="https://github.com/khemritolya/desktopgalaxy">desktopgalaxy</a></li>
+				<li><a href="https://github.com/khemritolya/RecursiveFunction">RecursiveFunction</a></li>
+			</ul>
+			<p>You can find more on my <a href="https://github.com/khemritolya">GitHub</a></p>
+			<p id="footer">© Luis Hoderlein, 2020</p>
+		</div>
+
+		<div id="star0"></div>
+		<div id="star1"></div>
+		<div id="star2"></div>
+		<div id="star3"></div>
+		<div id="star4"></div>
+		<div id="star5"></div>
+		<div id="star6"></div>
+		<div id="star7"></div>
+		<div id="star8"></div>
+		<div id="star9"></div>
+		<div id="star10"></div>
+		<div id="star11"></div>
+		<div id="star12"></div>
+		<div id="star13"></div>
+		<div id="star14"></div>
+		<div id="star15"></div>
+		<div id="star16"></div>
+		<div id="star17"></div>
+		<div id="star18"></div>
+		<div id="star19"></div>
+		<div id="star20"></div>
+		<div id="star21"></div>
+		<div id="star22"></div>
+		<div id="star23"></div>
+		<div id="star24"></div>
+		<div id="star25"></div>
+		<div id="star26"></div>
+		<div id="star27"></div>
+		<div id="star28"></div>
+		<div id="star29"></div>
+		<div id="star30"></div>
+		<div id="star31"></div>
+		<div id="star32"></div>
+		<div id="star33"></div>
+		<div id="star34"></div>
+		<div id="star35"></div>
+		<div id="star36"></div>
+		<div id="star37"></div>
+		<div id="star38"></div>
+		<div id="star39"></div>
+		<div id="star40"></div>
+		<div id="star41"></div>
+		<div id="star42"></div>
+		<div id="star43"></div>
+		<div id="star44"></div>
+		<div id="star45"></div>
+		<div id="star46"></div>
+		<div id="star47"></div>
+		<div id="star48"></div>
+		<div id="star49"></div>
+		<div id="star50"></div>
+		<div id="cover"></div>
+	</body>
 </html>
-TODO: website
+
